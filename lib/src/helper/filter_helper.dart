@@ -536,37 +536,39 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children:
-        [
-          IconButton(
-            icon: const Icon(Icons.add),
-            color: configuration!.style.iconColor,
-            iconSize: configuration!.style.iconSize,
-            onPressed: handleAddButton,
-          ),
-          IconButton(
-            icon: const Icon(Icons.remove),
-            color: configuration!.style.iconColor,
-            iconSize: configuration!.style.iconSize,
-            onPressed: handleRemoveButton,
-          ),
-          IconButton(
-            icon: const Icon(Icons.clear_sharp),
-            color: Colors.red,
-            iconSize: configuration!.style.iconSize,
-            onPressed: handleClearButton,
-          ),
-          IconButton(
-            icon: const Icon(Icons.done),
-            color: configuration!.style.iconColor,
-            iconSize: configuration!.style.iconSize + 16,
-            onPressed: handleDoneButton,
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children:
+      [
+        IconButton(
+          icon: const Icon(Icons.exit_to_app),
+          color: configuration!.style.iconColor,
+          iconSize: configuration!.style.iconSize,
+          onPressed: handleClearButton,
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              color: configuration!.style.iconColor,
+              iconSize: configuration!.style.iconSize,
+              onPressed: handleAddButton,
+            ),
+            IconButton(
+              icon: const Icon(Icons.remove),
+              color: configuration!.style.iconColor,
+              iconSize: configuration!.style.iconSize,
+              onPressed: handleRemoveButton,
+            ),
+            IconButton(
+              icon: const Icon(Icons.done),
+              color: configuration!.style.iconColor,
+              iconSize: configuration!.style.iconSize + 16,
+              onPressed: handleDoneButton,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
