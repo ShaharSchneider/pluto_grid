@@ -530,12 +530,17 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
     }
   }
 
+  void handleSelectButton() {
+    Navigator.of(stateManager!.gridFocusNode.context!).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: [
+        children:
+        [
           IconButton(
             icon: const Icon(Icons.add),
             color: configuration!.style.iconColor,
@@ -553,6 +558,12 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
             color: Colors.red,
             iconSize: configuration!.style.iconSize,
             onPressed: handleClearButton,
+          ),
+          IconButton(
+            icon: const Icon(Icons.done),
+            color: configuration!.style.iconColor,
+            iconSize: configuration!.style.iconSize,
+            onPressed: handleSelectButton,
           ),
         ],
       ),
