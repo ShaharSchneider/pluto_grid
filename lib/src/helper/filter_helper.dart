@@ -530,7 +530,7 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
     }
   }
 
-  void handleSelectButton() {
+  void handleDoneButton() {
     Navigator.of(stateManager!.gridFocusNode.context!).pop();
   }
 
@@ -563,7 +563,7 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
             icon: const Icon(Icons.done),
             color: configuration!.style.iconColor,
             iconSize: configuration!.style.iconSize,
-            onPressed: handleSelectButton,
+            onPressed: handleDoneButton,
           ),
         ],
       ),

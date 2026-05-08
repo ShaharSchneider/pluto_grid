@@ -78,3 +78,5 @@ coverage/
 
 # FVM Support - https://fvm.app/
 .fvm/flutter_sdk
+
+example/**
