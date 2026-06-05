@@ -48,12 +48,9 @@ mixin FilteringRowState implements IPlutoGridState {
       setFilterRows([]);
     }
 
-    if (filterOnlyEvent) {
-      eventManager!.addEvent(
-        PlutoGridSetColumnFilterEvent(filterRows: filterRows),
-      );
-      return;
-    }
+    eventManager!.addEvent(
+      PlutoGridSetColumnFilterEvent(filterRows: filterRows),
+    );
 
     for (final row in iterateAllRowAndGroup) {
       row.setState(PlutoRowState.none);
